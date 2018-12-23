@@ -7,3 +7,19 @@ Metrics/LineLength:
 Style/MixinUsage:
   Exclude:
     - bin/*
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/EmptyLinesAroundClassBody:
+  EnforcedStyle: empty_lines
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - "db/**/*"
+
+Metrics/MethodLength:
+  Max: 20
+  Exclude:
+    - "db/**/*"
