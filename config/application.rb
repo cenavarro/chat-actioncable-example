@@ -19,7 +19,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Chat
+module ChatApp
   class Application < Rails::Application
 
     # Initialize configuration defaults for originally generated Rails version.
@@ -33,5 +33,7 @@ module Chat
     # Don't generate system test files.
     config.generators.system_tests = nil
 
+    config.time_zone = 'Central America'
+    config.active_record.default_timezone = :local
   end
 end

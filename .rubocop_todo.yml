@@ -23,3 +23,8 @@ Metrics/MethodLength:
   Max: 20
   Exclude:
     - "db/**/*"
+
+AllCops:
+  DisplayCopNames: true
+  Exclude:
+    - "db/schema.rb"

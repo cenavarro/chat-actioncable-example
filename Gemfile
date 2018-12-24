@@ -15,7 +15,11 @@ gem "rails", "~> 5.2.2"
 gem "redis"
 gem "rubocop"
 gem "sass-rails"
+gem "coffee-rails"
+gem "jquery-rails"
 gem "uglifier"
+gem "bootstrap-sass"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
@@ -31,5 +35,7 @@ group :development do
 end
 
 group :test do
+  gem "rails-controller-testing"
   gem "rspec-rails"
+  gem "shoulda-matchers", "4.0.0.rc1"
 end

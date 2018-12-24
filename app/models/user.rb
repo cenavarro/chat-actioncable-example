@@ -7,6 +7,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :trackable, :confirmable,
          :recoverable, :rememberable, :validatable
 
+  has_many :messages, dependent: :destroy
+
   validates :first_name, :last_name, presence: true
+
+  def full_name
+    [first_name, last_name].join(" ")
+  end
 
 end

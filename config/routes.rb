@@ -3,5 +3,10 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "pages#home"
+  resources :chats do
+    resources :messages, only: [:create]
+  end
+
+  mount ActionCable.server => '/cable'
+  root "chats#index"
 end
