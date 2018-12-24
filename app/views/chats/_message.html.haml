@@ -1,0 +1,6 @@
+.chat-message{ id: "message-#{message.id}", class: creator ? "right" : "left" }
+  = image_tag "https://via.placeholder.com/48", class: "message-avatar"
+  .message
+    = link_to message.user.full_name, "#", class: "message-author"
+    %span.message-date= message.created_at
+    %span.message-content= message.body

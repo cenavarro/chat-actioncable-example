@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %title Chat App
+    = csrf_meta_tags
+    = csp_meta_tag
+    = action_cable_meta_tag
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+
+  %body{ class: current_user ? "" : "gray-bg" }
+    #wrapper
+      - if current_user
+        %nav.navbar-default.navbar-static-side{ role: "navigation" }
+          .sidebar-collapse
+            %ul.nav.metismenu
+              %li.nav-header
+                .profile-element
+                  = image_tag "https://via.placeholder.com/48", class: "rounded-circle"
+                  = link_to "#" do
+                    .block.m-t-xs.font-bold= current_user.full_name
+        #page-wrapper.gray-bg
+          .row.border-bottom
+            %nav.navbar-static-top{ role: "navigation" }
+              %ul.nav.navbar-top-links.navbar-right
+                %li
+                  = link_to destroy_user_session_path, method: :delete do
+                    %i.fa.fa-sign-out
+                    Logout
+          = yield
+      - else
+        = yield

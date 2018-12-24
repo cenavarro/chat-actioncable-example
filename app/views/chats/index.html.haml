@@ -1,0 +1,17 @@
+.row
+  .col-lg-12
+    .ibox.chat-view
+      .ibox-title
+        Chats
+      .ibox-content
+        .row
+          .col-md-3
+            .chat-users
+              .users-list
+                - @chats.each do |chat|
+                  .chat-user
+                    .chat-user-name
+                      = link_to chat.name, chat_path(chat)
+          .col-md-9.no-padding
+            .chat-discussion
+              %h1.text-center Select a Chat Room
