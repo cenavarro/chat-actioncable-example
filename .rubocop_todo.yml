@@ -27,6 +27,7 @@ Metrics/MethodLength:
 Metrics/BlockLength:
   Exclude:
     - "config/environments/**/*"
+    - "spec/**/*"
 
 AllCops:
   DisplayCopNames: true
