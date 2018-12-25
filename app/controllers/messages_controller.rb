@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MessagesController < ApplicationController
 
   before_action :set_chat
@@ -32,4 +34,5 @@ class MessagesController < ApplicationController
       }
     )
   end
+
 end

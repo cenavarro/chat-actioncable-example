@@ -11,7 +11,7 @@ $(->
       $newMessageBody = $newMessageForm.find('#new-message-body')
 
       $newMessageBody.on("keypress", (event) ->
-        if event.which == 13 && !event.shiftKey
+        if event.which == 13 && !event.shiftKey && $.trim($newMessageBody.val()).length > 0
           $(event.target).closest("form").find(":submit").click()
       );
 

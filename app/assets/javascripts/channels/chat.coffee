@@ -6,7 +6,7 @@ $(->
 
     App.chat = App.cable.subscriptions.create {
         channel: "ChatChannel",
-        chat_id: 1
+        chat_id: gon.chat_id
       },
       connected: ->
 
