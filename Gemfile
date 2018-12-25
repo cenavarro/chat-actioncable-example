@@ -5,9 +5,16 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.5.3"
 
+gem "aws-sdk-s3", require: false
 gem "bootsnap", ">= 1.1.0", require: false
+gem "bootstrap-sass"
+gem "coffee-rails"
 gem "devise"
+gem "font-awesome-rails"
+gem "gon"
 gem "haml-rails"
+gem "jquery-rails"
+gem "mini_magick"
 gem "pg"
 gem "puma"
 gem "pundit"
@@ -15,11 +22,7 @@ gem "rails", "~> 5.2.2"
 gem "redis"
 gem "rubocop"
 gem "sass-rails"
-gem "coffee-rails"
-gem "jquery-rails"
 gem "uglifier"
-gem "bootstrap-sass"
-gem "font-awesome-rails"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]

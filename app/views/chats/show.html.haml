@@ -7,23 +7,18 @@
         .row
           .col-md-9
             #messages.chat-discussion
-              - @chat.messages.order(:created_at).find_each do |message|
+              - @chat.messages.order(:created_at).last(10).each do |message|
                 = render "message", message: message, creator: message.user_id == current_user.id
           .col-md-3
             .chat-users
-              .users-list
-                .chat-user
-                  = image_tag "https://via.placeholder.com/36", class: "chat-avatar"
-                  .chat-user-name
-                    = link_to "John Doe"
-                .chat-user
-                  = image_tag "https://via.placeholder.com/36", class: "chat-avatar"
-                  .chat-user-name
-                    = link_to "Jane Doe"
+              #chat-users-list.users-list
+                = render "connected_user", user: current_user
+                - @connected_users.each do |user|
+                  = render "connected_user", user: user
         .row
           .col-lg-12
             .chat-message-form
               .form-group
                 = form_with(model: Message.new, url: chat_messages_path(@chat), html: { id: "new-message-form" }) do |f|
-                  = f.text_field :body, id: "new-message-body", class: "form-control", placeholder: "Enter message text"
+                  = f.text_area :body, id: "new-message-body", class: "form-control", placeholder: "Enter message text", required: true
                   = f.submit "Send", class: "hidden"

@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class MessageBroadcastJob < ApplicationJob
+
   queue_as :default
 
   def perform(message)
@@ -16,7 +19,7 @@ class MessageBroadcastJob < ApplicationJob
       partial: "chats/message",
       locals: {
         message: message,
-        creator: false,
+        creator: false
       }
     )
   end

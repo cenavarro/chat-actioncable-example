@@ -1,0 +1,7 @@
+.chat-user{ id: "chat-user-#{user.id}" }
+  - if user.avatar.attached?
+    = image_tag url_for(user.avatar.variant(resize: "36x36")), class: "chat-avatar"
+  - else
+    = image_tag "https://via.placeholder.com/36", class: "chat-avatar"
+  .chat-user-name
+    = link_to user.full_name, "#"
