@@ -20,26 +20,28 @@ gem "puma"
 gem "pundit"
 gem "rails", "~> 5.2.2"
 gem "redis"
-gem "rubocop"
 gem "sass-rails"
 gem "uglifier"
 
 group :development, :test do
   gem "action-cable-testing"
-  gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "faker"
+  gem "pry-rails"
+  gem "rubocop"
 end
 
 group :development do
   gem "listen"
   gem "spring"
   gem "spring-watcher-listen"
-  gem "web-console"
 end
 
 group :test do
+  gem "capybara"
+  gem "launchy"
   gem "rails-controller-testing"
   gem "rspec-rails"
   gem "shoulda-matchers", "4.0.0.rc1"
+  gem "simplecov", require: false
 end

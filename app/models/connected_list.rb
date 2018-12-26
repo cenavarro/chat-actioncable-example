@@ -8,11 +8,16 @@ class ConnectedList
     @redis ||= ::Redis.new(url: ActionCableConfig[:url])
   end
 
+  def self.clear_all
+    keys = redis.keys.select { |key| key.starts_with?(REDIS_KEY) }
+    keys.each { |key| redis.del(key) }
+  end
+
   def self.all(chat_id)
     redis.smembers(REDIS_KEY + chat_id.to_s)
   end
 
-  def self.clear_all(chat_id)
+  def self.clear(chat_id)
     redis.del(REDIS_KEY + chat_id.to_s)
   end
 
