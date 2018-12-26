@@ -28,3 +28,4 @@
 
 /config/database.yml
 /config/storage.yml
+/coverage

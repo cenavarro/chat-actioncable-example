@@ -12,7 +12,8 @@ module ActionCableConfig
     @config[key]
   end
 
-  def self.[]=(key, value)
-    @config[key.to_sym] = value
-  end
+  # Uncomment this if you want to set a value
+  # def self.[]=(key, value)
+  #   @config[key.to_sym] = value
+  # end
 end
