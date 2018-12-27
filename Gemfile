@@ -39,6 +39,8 @@ end
 
 group :test do
   gem "capybara"
+  gem "capybara-selenium"
+  gem "capybara-chromedriver-logger"
   gem "launchy"
   gem "rails-controller-testing"
   gem "rspec-rails"
