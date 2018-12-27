@@ -42,9 +42,9 @@ Rails.application.configure do
 
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
-  config.action_mailer.default_url_options = { host: "test.host" }
-  config.default_url_options = { host: "test.host" }
-  config.action_controller.asset_host = "http://test.host"
+  config.action_mailer.default_url_options = { host: "localhost:3030" }
+  config.default_url_options = { host: "localhost:3030" }
+  config.action_controller.asset_host = "http://localhost:3030"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
