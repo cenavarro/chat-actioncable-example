@@ -39,11 +39,12 @@ end
 
 group :test do
   gem "capybara"
-  gem "capybara-selenium"
   gem "capybara-chromedriver-logger"
+  gem "capybara-selenium"
   gem "launchy"
   gem "rails-controller-testing"
   gem "rspec-rails"
+  gem "rspec_junit_formatter"
   gem "shoulda-matchers", "4.0.0.rc1"
   gem "simplecov", require: false
 end

@@ -7,6 +7,7 @@ RSpec.describe MessageBroadcastJob, type: :job do
     let!(:message) { create(:message) }
 
     before { ActiveJob::Base.queue_adapter = :test }
+    after { ActiveJob::Base.queue_adapter = :inline }
 
     it "enqueues the job for broadcasting the message" do
       expect do

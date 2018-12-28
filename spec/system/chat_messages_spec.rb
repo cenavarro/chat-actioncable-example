@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "rails_helper"
 
 RSpec.describe "Chats Messages", type: :system do
@@ -10,7 +12,7 @@ RSpec.describe "Chats Messages", type: :system do
     it "creates and displays the new message", js: true do
       expect do
         visit chat_path(chat)
-        find('#new-message-body').set("Hello there!\n")
+        find("#new-message-body").set("Hello there!\n")
 
         expect(page).to have_content("Hello there!")
       end.to change(chat.messages, :count).by(1)
